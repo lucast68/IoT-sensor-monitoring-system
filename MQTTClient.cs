@@ -104,7 +104,7 @@ public class MQTTClient : MonoBehaviour
 
     void ClearGraphTexture()
     {   
-        // Initalizes graph with black background
+        // Initializes graph with black background
         for (int y = 0; y < graphTexture.width; y++)
         {
             for (int x = 0; x < graphTexture.height; x++)
