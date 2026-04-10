@@ -36,7 +36,7 @@ void setup() {
                 Serial.println("[WiFi] Failed to connect!");
                 return;
                 break;
-            //Connection was lost
+            // Connection was lost
             case WL_CONNECITON_LOST:
                 Serial.println("[WiFi] Connection was lost");
                 break;
