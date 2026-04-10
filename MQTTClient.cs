@@ -98,13 +98,13 @@ public class MQTTClient : MonoBehaviour
             temperatureData[temperatureData.Length - 1] = temperature;
         }
 
-        // Redraw graph with the updated temperature data
+        // Redraws graph with the updated temperature data
         UpdateGraphTexture();
     }
 
     void ClearGraphTexture()
     {   
-        // Initalize graph with black background
+        // Initalizes graph with black background
         for (int y = 0; y < graphTexture.width; y++)
         {
             for (int x = 0; x < graphTexture.height; x++)
@@ -125,11 +125,11 @@ public class MQTTClient : MonoBehaviour
             int yPos = Mathf.RoundToInt (Mathf.Lerp(0, graphTexture.Height - 1, temperatureData[i] / 50));
             graphTexture.SetPixel (i, yPos, Color.red); // Plot as red pixel
         }
-        // Apply the changes to the texture
+        // Applies the changes to the texture
         graphTexture.Apply();
     }
 
-    // Connect to MQTT broker and subscribe to temperature topic
+    // Connects to MQTT broker and subscribe to temperature topic
      void ConnectToBroker()
     {
         try
@@ -160,15 +160,15 @@ public class MQTTClient : MonoBehaviour
         // Processes temperature readings from DS18B20
         if (SensorData.sensor == "DS18B20")
         {   
-            // Add temperature to thread-safe queue for main thread processing
+            // Adds temperature to thread-safe queue for main thread processing
             temperatureQueue.Enqueue(SensorData.temperature);
         }
     }
     
-    // Clean up applicaiton exit to prevent connection leaks
+    // Cleans up applicaiton exit to prevent connection leaks
     private void OnApplicationQuit()
     {   
-        // Disconnect from the MQTT broker when the game closes
+        // Disconnects from the MQTT broker when the game closes
         if (mqttClient.IsConnected)
         {
             mqttClient.Disconnect();
