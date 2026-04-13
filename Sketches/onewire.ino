@@ -98,7 +98,7 @@ void loop() {
 
 // Establishes Wi-Fi connection with visual feedback
 void connectToWiFi() {
-    Serail.println();
+    Serial.println();
     Serial.print("Connecting to WiFi...");
     
     WiFi.begin(ssid, password);
