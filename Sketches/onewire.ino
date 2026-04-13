@@ -109,7 +109,7 @@ void connectToWiFi() {
         Serial.print(".");
     }
 
-    Serail.println();
+    Serial.println();
     Serial.println("Connected to WiFi");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
